@@ -1,0 +1,281 @@
+/* استایل اصلی سایت «دعای آرامش» */
+:root {
+  --green-dark: #173c35;
+  --green: #2f6658;
+  --cream: #f5f2ea;
+  --gold: #d9b86c;
+  --text: #29251f;
+  --white: #ffffff;
+  --muted: #6e685e;
+  --border: rgba(23, 60, 53, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* نوار بالای سایت */
+.navbar {
+  background: rgba(23, 60, 53, 0.98);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* بخش اصلی */
+.hero {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 7vw, 56px);
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  font-size: 18px;
+  opacity: 0.94;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: var(--gold);
+  color: #1e1a13;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  margin-right: 8px;
+}
+
+/* بخش‌ها */
+.section {
+  padding: 65px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.section-title h2 {
+  margin: 0 0 8px;
+  color: var(--green-dark);
+  font-size: 30px;
+}
+
+.section-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* کارت‌ها */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 27px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.055);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 13px 30px rgba(0, 0, 0, 0.09);
+}
+
+.card-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  color: var(--green);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* باکس اطلاع‌رسانی */
+.note {
+  background: #fffaf0;
+  border-right: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+/* فرم */
+.form-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd5c8;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* فوتر */
+footer {
+  background: var(--green-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 28px 15px;
+}
+
+footer p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* نمایش موبایل */
+@media (max-width: 760px) {
+  .navbar-inner {
+    padding: 12px 0;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 65px 18px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .btn-outline {
+    margin-right: 0;
+    margin-top: 8px;
+  }
+}

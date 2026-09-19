@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت درخواست | دعای آرامش</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">دعای آرامش</a>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="services.html">خدمات</a>
+      <a href="request.html">ثبت درخواست</a>
+      <a href="guide.html">راهنما</a>
+      <a href="contact.html">تماس</a>
+      <a href="privacy.html">حریم خصوصی</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">ثبت درخواست</h1>
+    <p class="section-subtitle">
+      اطلاعات زیر را وارد کنید. پس از ثبت، واتساپ باز می‌شود و پیام درخواست شما آماده ارسال خواهد بود.
+    </p>
+
+    <div class="form-box">
+      <form id="requestForm">
+        <div class="form-group">
+          <label for="name">نام</label>
+          <input id="name" name="name" type="text" required placeholder="نام خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+          <label for="contact">راه ارتباطی</label>
+          <input id="contact" name="contact" type="text" required placeholder="مثلاً شماره تماس">
+        </div>
+
+        <div class="form-group">
+          <label for="service">خدمت موردنظر</label>
+          <select id="service" name="service" required>
+            <option value="">انتخاب کنید</option>
+            <option>دعای گشایش کار</option>
+            <option>دعای فروش ملک</option>
+            <option>دعای زبان‌بندی خلق</option>
+            <option>دعای مهر و محبت</option>
+            <option>دعای بارداری</option>
+            <option>دعای رفع نگرانی</option>
+            <option>دعای خیر و برکت</option>
+            <option>فال موکل‌دار</option>
+            <option>سرکتاب</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">توضیحات</label>
+          <textarea id="message" name="message" rows="6" placeholder="اگر توضیحی دارید اینجا بنویسید"></textarea>
+        </div>
+
+        <button class="btn" type="submit">ارسال درخواست در واتساپ</button>
+      </form>
+
+      <div class="note">
+        با زدن دکمه، واتساپ باز می‌شود و متن درخواست برای شما آماده خواهد شد. ارسال نهایی پیام را خودتان انجام می‌دهید.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 دعای آرامش — تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("requestForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const contact = document.getElementById("contact").value.trim();
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value.trim();
+
+  const whatsappNumber = "989015469195";
+
+  const text =
+`سلام، برای ثبت درخواست از سایت «دعای آرامش» پیام می‌دهم.
+
+نام: ${name}
+راه ارتباطی: ${contact}
+خدمت موردنظر: ${service}
+توضیحات: ${message || "بدون توضیحات اضافی"}`;
+
+  const whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+  window.open(whatsappUrl, "_blank");
+});
+</script>
+
+</body>
+</html>
